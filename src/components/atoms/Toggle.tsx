@@ -18,12 +18,12 @@ export default function Toggle({
   ariaLabel,
 }: ToggleProps) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2.5">
       <span
-        className={`text-sm ${
+        className={`text-sm font-body font-medium ${
           !checked
-            ? 'text-slate-900 dark:text-slate-50 font-medium'
-            : 'text-slate-500 dark:text-slate-400'
+            ? 'text-surface-900 dark:text-surface-100'
+            : 'text-surface-400 dark:text-surface-500'
         }`}
       >
         {labelLeft}
@@ -33,13 +33,13 @@ export default function Toggle({
         role="switch"
         aria-checked={checked}
         aria-label={ariaLabel}
-        className="
+        className={`
           relative inline-flex h-6 w-11 items-center rounded-full
-          bg-slate-300 dark:bg-slate-600
           transition-colors duration-200
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400
           min-w-[44px] min-h-[44px] p-0
-        "
+          ${checked ? 'bg-gold-500' : 'bg-surface-300 dark:bg-surface-600'}
+        `}
         onClick={() => onChange(!checked)}
       >
         <span
@@ -51,10 +51,10 @@ export default function Toggle({
         />
       </button>
       <span
-        className={`text-sm ${
+        className={`text-sm font-body font-medium ${
           checked
-            ? 'text-slate-900 dark:text-slate-50 font-medium'
-            : 'text-slate-500 dark:text-slate-400'
+            ? 'text-surface-900 dark:text-surface-100'
+            : 'text-surface-400 dark:text-surface-500'
         }`}
       >
         {labelRight}

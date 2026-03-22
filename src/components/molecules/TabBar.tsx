@@ -9,9 +9,9 @@ interface TabBarProps {
 }
 
 const tabs: { id: TabId; label: string }[] = [
-  { id: 'clock', label: 'Clock' },
+  { id: 'clock',     label: 'Clock' },
   { id: 'stopwatch', label: 'Stopwatch' },
-  { id: 'timer', label: 'Timer' },
+  { id: 'timer',     label: 'Timer' },
 ];
 
 export default function TabBar({ activeTab, onTabChange }: TabBarProps) {
@@ -19,7 +19,7 @@ export default function TabBar({ activeTab, onTabChange }: TabBarProps) {
     <div
       role="tablist"
       aria-label="Main navigation"
-      className="flex bg-slate-200 dark:bg-slate-700 rounded-lg p-1 gap-1"
+      className="flex bg-surface-100 dark:bg-surface-800 rounded-2xl p-1.5 gap-1 my-6"
     >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
@@ -31,13 +31,13 @@ export default function TabBar({ activeTab, onTabChange }: TabBarProps) {
             aria-selected={isActive}
             tabIndex={isActive ? 0 : -1}
             className={`
-              flex-1 min-h-[44px] px-4 py-2 rounded-md text-sm font-medium
-              transition-colors duration-150
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500
+              flex-1 min-h-[44px] px-4 py-2 rounded-xl text-sm font-body font-medium
+              transition-all duration-200
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400
               ${
                 isActive
-                  ? 'bg-sky-600 dark:bg-sky-400 text-white dark:text-slate-900 shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+                  ? 'bg-surface-900 dark:bg-gold-500 text-white dark:text-surface-900 shadow-card'
+                  : 'text-surface-500 dark:text-surface-400 hover:text-surface-800 dark:hover:text-surface-200 hover:bg-surface-200 dark:hover:bg-surface-700'
               }
             `}
             onClick={() => onTabChange(tab.id)}

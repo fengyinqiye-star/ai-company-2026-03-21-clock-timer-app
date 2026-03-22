@@ -26,16 +26,17 @@ export default function TimeUnit({
   };
 
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col items-center gap-1.5">
       <button
         type="button"
         className="
           min-w-[44px] min-h-[44px] flex items-center justify-center
-          rounded-lg text-xl font-bold
-          text-slate-600 dark:text-slate-300
-          hover:bg-slate-200 dark:hover:bg-slate-700
-          transition-colors duration-150
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500
+          rounded-xl text-xl font-bold
+          text-surface-500 dark:text-surface-400
+          hover:bg-surface-100 dark:hover:bg-surface-800
+          hover:text-gold-500 dark:hover:text-gold-400
+          transition-all duration-150
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400
         "
         onClick={increment}
         aria-label={`${label}を増やす`}
@@ -44,19 +45,20 @@ export default function TimeUnit({
           <path d="M10 5l6 8H4l6-8z" />
         </svg>
       </button>
-      <div className="font-mono text-4xl text-slate-900 dark:text-slate-50 w-16 text-center">
+      <div className="font-display text-5xl text-surface-900 dark:text-gold-400 w-20 text-center tracking-tight">
         {String(value).padStart(2, '0')}
       </div>
-      <span className="text-xs text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="text-xs font-body text-surface-400 dark:text-surface-500 uppercase tracking-widest">{label}</span>
       <button
         type="button"
         className="
           min-w-[44px] min-h-[44px] flex items-center justify-center
-          rounded-lg text-xl font-bold
-          text-slate-600 dark:text-slate-300
-          hover:bg-slate-200 dark:hover:bg-slate-700
-          transition-colors duration-150
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500
+          rounded-xl text-xl font-bold
+          text-surface-500 dark:text-surface-400
+          hover:bg-surface-100 dark:hover:bg-surface-800
+          hover:text-gold-500 dark:hover:text-gold-400
+          transition-all duration-150
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400
         "
         onClick={decrement}
         aria-label={`${label}を減らす`}

@@ -10,10 +10,13 @@ interface HeaderProps {
 
 export default function Header({ isDark, onToggleDarkMode }: HeaderProps) {
   return (
-    <header role="banner" className="flex items-center justify-between py-4">
-      <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50 tracking-tight">
-        Clock
-      </h1>
+    <header role="banner" className="flex items-center justify-between pt-8 pb-2">
+      <div>
+        <h1 className="font-display text-2xl font-bold tracking-tight text-surface-900 dark:text-surface-50">
+          <span className="text-gold-400">C</span>lock
+        </h1>
+        <div className="mt-0.5 h-0.5 w-8 bg-gold-400 rounded-full" />
+      </div>
       <IconButton
         icon={isDark ? 'sun' : 'moon'}
         onClick={onToggleDarkMode}

@@ -9,7 +9,7 @@ interface DateDisplayProps {
 
 export default function DateDisplay({ date }: DateDisplayProps) {
   return (
-    <div className="text-lg text-slate-500 dark:text-slate-400">
+    <div className="font-body text-base text-surface-400 dark:text-surface-500 tracking-wide">
       {formatDate(date)}
     </div>
   );

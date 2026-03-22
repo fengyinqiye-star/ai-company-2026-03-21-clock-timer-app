@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import Toggle from '@/components/atoms/Toggle';
 import { formatClockTime } from '@/utils/time';
 import { STORAGE_KEY_TIME_FORMAT } from '@/lib/constants';
@@ -27,15 +27,15 @@ export default function DigitalClock({ hours, minutes, seconds }: DigitalClockPr
   const { time, period } = formatClockTime(hours, minutes, seconds, is24h);
 
   return (
-    <div className="flex flex-col items-center gap-3">
+    <div className="flex flex-col items-center gap-4">
       <div
-        className="font-mono text-4xl sm:text-5xl text-slate-900 dark:text-slate-50 tracking-wider"
+        className="font-display text-6xl sm:text-7xl font-bold text-surface-900 dark:text-gold-400 tracking-tight tabular-nums"
         aria-live="polite"
         aria-label={`現在時刻: ${hours}時${minutes}分${seconds}秒`}
       >
         {time}
         {period && (
-          <span className="text-lg sm:text-xl ml-2 text-slate-500 dark:text-slate-400">
+          <span className="text-xl sm:text-2xl ml-2 text-surface-400 dark:text-surface-500 font-body font-normal">
             {period}
           </span>
         )}
